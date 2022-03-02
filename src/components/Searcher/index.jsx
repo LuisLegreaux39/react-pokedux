@@ -2,7 +2,14 @@ import React from 'react';
 import { Grid, Search } from 'semantic-ui-react';
 import './styles.css';
 
-export default function SearchBar() {
+const SearchBar = (props) => {
+
+  const { bind } = props;
+
+  const handleSearcher = () => {
+    return (e) => bind(e.target.value)
+  }
+
   return (
     <div className='Searcher wrapper'>
       <Grid>
@@ -16,6 +23,7 @@ export default function SearchBar() {
             aligned='right'
             input={{ fluid: true }}
             showNoResults={false}
+            onSearchChange={handleSearcher()}
             placeholder='Encuentra a tu Pokemón favorito'
           />
         </Grid.Column>
@@ -23,3 +31,5 @@ export default function SearchBar() {
     </div>
   );
 }
+
+export default SearchBar;

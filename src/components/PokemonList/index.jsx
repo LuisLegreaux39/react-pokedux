@@ -1,20 +1,23 @@
-import React from 'react';
-import { Grid,Loader } from 'semantic-ui-react';
+import React,{ useEffect } from 'react';
+import { Grid, Loader } from 'semantic-ui-react';
 import { useSelector } from 'react-redux';
-import PokemonCard from './PokemonCard';
 
+import PokemonCard from './PokemonCard';
 import './styles.css';
 
-const PokemonList = () => {
+const PokemonList = (props) => {
 
-  const { list,status } = useSelector(state=>state.pokemons)
-  
-  if(status === 'pending') return  <Loader inverted>Loading</Loader>
+  const { pokemonList } = props;
+
+  const { status } = useSelector(state => state.pokemons)
+
+  if (!status) return null;
+  if (status === 'pending') return <Loader active >Loading</Loader>;
 
   return (
     <div className='wrapper'>
       <Grid>
-        {list.map((pokemon, index) => {
+        {pokemonList.map((pokemon, index) => {
           return <PokemonCard key={`pokemon-${index}`} {...pokemon} />;
         })}
       </Grid>
