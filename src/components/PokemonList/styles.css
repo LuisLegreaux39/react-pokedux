@@ -9,3 +9,8 @@
   text-align: center;
   color: #999;
 }
+
+.Pokemon-type{
+  display: flex;
+  justify-content: center;
+}

@@ -4,6 +4,7 @@ let path = require("path");
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base:"/react-pokedux/",
   plugins: [react()],
   server: {
     host: true

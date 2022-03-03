@@ -6,6 +6,7 @@ import FuzzySearch from 'fuzzy-search';
 import Searcher from '@/components/Searcher';
 import PokemonList from '@/components/PokemonList';
 import { dispatcher } from "@/state/store";
+import { pokemonsSelector } from "@/state/Pokemons"
 import { getPokemons } from "@/state/Pokemons/thunks/getAllPokemons";
 
 import './styles.css';
@@ -14,7 +15,7 @@ const Home = () => {
 
   const [currentSearch, setCurrentSearch] = useState('');
 
-  const { list } = useSelector(state => state.pokemons);
+  const { list } = useSelector(state=>pokemonsSelector(state));
 
   const search = useCallback(() => {
     if (!currentSearch) return list;
@@ -22,7 +23,7 @@ const Home = () => {
       caseSensitive: true
     })
     return searcher.search(currentSearch);
-  }, [currentSearch,list])
+  }, [currentSearch, list])
 
   useEffectOnce(() => dispatcher(getPokemons()))
 
