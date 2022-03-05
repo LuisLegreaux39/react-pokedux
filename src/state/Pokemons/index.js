@@ -13,7 +13,10 @@ const pokemonSlice = createSlice({
     initialState: {
         home: {
             list: [],
+            pokemonCount: 0,
             status: null,
+            next:null,
+            previous:null
         },
         details: {
             pokemon: null,

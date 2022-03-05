@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Grid, Loader } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Grid, Loader, Pagination } from 'semantic-ui-react';
 import { useSelector } from 'react-redux';
 import { motion } from "framer-motion";
 
@@ -8,6 +8,8 @@ import { pokemonsSelector } from "@/state/Pokemons"
 import './styles.css';
 
 const PokemonList = (props) => {
+
+  const [pagination ,setPaginationSettings] = useState({})
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -23,7 +25,7 @@ const PokemonList = (props) => {
 
   const { pokemonList } = props;
 
-  const { status } = useSelector(state => pokemonsSelector(state));
+  const { status , pokemonCount } = useSelector(state => pokemonsSelector(state));
 
   if (!status) return null;
   if (status === 'pending') return <Loader active >Loading</Loader>;
@@ -35,6 +37,13 @@ const PokemonList = (props) => {
         {pokemonList.map((pokemon, index) => {
           return <PokemonCard key={`pokemon-${index}`} {...pokemon} />;
         })}
+        <Grid.Row>
+          <Pagination
+            activePage={0}
+            // onPageChange={this.handlePaginationChange}
+            totalPages={pokemonCount}
+          />
+        </Grid.Row>
       </Grid>
     </motion.div>
   );

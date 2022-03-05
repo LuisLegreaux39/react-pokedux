@@ -4,7 +4,7 @@ const { get } = service
 
 export const getPokemonDetail = (pokemonUrl) => get(pokemonUrl);
 export const getPokemonIdDetails = (id) => get(`pokemon/${id}`);
-export const getAllPokemons = (limit = 151) => get(`pokemon?limit=${limit}`);
+export const getAllPokemons = (limit = 10) => get(`pokemon?limit=?limit=${limit}&offset=200`);
 export const getSeveralIds = (pokemons) => Promise.all(pokemons.map(pokemon => getPokemonDetail(pokemon.url)));
 
 

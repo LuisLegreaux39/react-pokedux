@@ -9,6 +9,7 @@ import { getMoves, getSeveralMoveDetails } from "@/api/pokemons";
 export const getAllMoves = createAsyncThunk(MOVES.GET_ALL, async (arg) => {
     const { data: { results } } = await getMoves();
     const response = await getSeveralMoveDetails(results)
+    console.log(response)
     return response.map(move => move.data);
 })
 
