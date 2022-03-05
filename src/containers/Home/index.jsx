@@ -8,6 +8,7 @@ import PokemonList from '@/components/PokemonList';
 import { dispatcher } from "@/state/store";
 import { pokemonsSelector } from "@/state/Pokemons"
 import { getPokemons } from "@/state/Pokemons/thunks/getAllPokemons";
+import TypesDetails from './TypesDetails'
 
 import './styles.css';
 
@@ -20,7 +21,7 @@ const Home = () => {
   const search = useCallback(() => {
     if (!currentSearch) return list;
     const searcher = new FuzzySearch(list, ["name"], {
-      caseSensitive: true
+      caseSensitive: false
     })
     return searcher.search(currentSearch);
   }, [currentSearch, list])
@@ -30,6 +31,7 @@ const Home = () => {
   return (
     <div className='Home'>
       <Searcher bind={(search) => setCurrentSearch(search)} />
+      <TypesDetails />
       <PokemonList pokemonList={search()} />
     </div>
   );

@@ -1,4 +1,3 @@
-import Home from './Home';
 import Layout from "@/components/Layout";
 import Routes from "@/routes";
 import "semantic-ui-css/semantic.min.css";

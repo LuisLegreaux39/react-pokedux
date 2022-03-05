@@ -11,11 +11,16 @@ const Menu = () => {
         <SemanticMenu.Item to='/'>
           <Image size='small' src={logo} />
         </SemanticMenu.Item>
-        <SemanticMenu.Item color='black'>
+        <SemanticMenu.Item >
           <Link to='/'>
             Home
           </Link>
         </SemanticMenu.Item>
+        {/* <SemanticMenu.Item >
+          <Link to='/abilities'>
+            Abilities
+          </Link>
+        </SemanticMenu.Item> */}
 
         {/* <SemanticMenu.Item to='/' position='right'>
           Favorites
