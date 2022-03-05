@@ -10,6 +10,7 @@ import { getAllTypes } from "@/state/Pokemons/thunks/getAllTypes";
 import { typesSelector } from '@/state/Pokemons/index';
 import { typeColors } from "@/utils/constants";
 
+
 const TypesDetails = () => {
 
     const [visible, setVisibility] = useState(false);

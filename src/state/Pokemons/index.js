@@ -6,6 +6,7 @@ import { getPokemonsExtraReducer } from './thunks/getAllPokemons';
 import { getPokemonExtraReducers } from './thunks/getPokemonById';
 import { getAbilitiesExtraReducer } from './thunks/getAllAbilities';
 import { getAllTypesExtraReducer } from './thunks/getAllTypes';
+import { getMovesExtraReducers } from './thunks/getMoves';
 
 const pokemonSlice = createSlice({
     name: "pokemons",
@@ -25,13 +26,18 @@ const pokemonSlice = createSlice({
         types: {
             list: [],
             status: null
+        },
+        moves: {
+            list: [],
+            status: null
         }
     },
     extraReducers: builder => {
         getPokemonsExtraReducer(builder),
             getPokemonExtraReducers(builder),
             getAbilitiesExtraReducer(builder),
-            getAllTypesExtraReducer(builder)
+            getAllTypesExtraReducer(builder),
+            getMovesExtraReducers(builder)
     }
 })
 

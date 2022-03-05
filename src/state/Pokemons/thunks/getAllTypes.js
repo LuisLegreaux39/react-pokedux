@@ -5,9 +5,11 @@ import {
 import { TYPES } from './actions'
 
 import { getTypes } from "@/api/pokemons";
+import { getAllMoves } from './getMoves';
 
-export const getAllTypes = createAsyncThunk(TYPES.GET_ALL, async (arg) => {
-    const { data: { results } } = await getTypes()
+export const getAllTypes = createAsyncThunk(TYPES.GET_ALL, async (arg,{ dispatch }) => {
+    const { data: { results } } = await getTypes();
+    dispatch(getAllMoves())
     return results;
 })
 

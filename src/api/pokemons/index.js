@@ -1,4 +1,4 @@
-import service from "../../services/main";
+import service from "@/services/main";
 
 const { get } = service
 
@@ -16,3 +16,8 @@ export const getSeveralAbiliesIDs = (abilities) => Promise.all(abilities.map(abi
 
 
 export const getTypes = () => get(`type`);
+
+
+export const getMoves = () => get(`move`);
+export const getMoveDetails = (url) => get(url);
+export const getSeveralMoveDetails =  (moves) => Promise.all(moves.map(move => getMoveDetails(move.url)));

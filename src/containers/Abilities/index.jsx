@@ -4,6 +4,7 @@ import { useEffectOnce } from "react-use";
 import { dispatcher } from "@/state/store";
 import { getAbilities } from "@/state/Pokemons/thunks/getAllAbilities";
 
+
 const index = () => {
 
     useEffectOnce(() => {

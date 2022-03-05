@@ -10,3 +10,7 @@ export const ABILITIES = {
 export const TYPES = {
     GET_ALL:"TYPES/GET_ALL"
 }
+
+export const MOVES = {
+    GET_ALL:"MOVES/GET_ALL"
+}
