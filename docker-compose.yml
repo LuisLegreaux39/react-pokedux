@@ -1,6 +1,6 @@
 services:
   server:
-    build: .
+    image: ghcr.io/luislegreaux39/react-pokedux-server:latest
     container_name: react-pokedux
     restart: unless-stopped
     ports:
