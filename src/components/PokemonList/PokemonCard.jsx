@@ -3,7 +3,7 @@ import { Image, Label, Divider, Grid, Icon } from 'semantic-ui-react';
 import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
 
-import { typeColors } from "@/utils/constants";
+import { typeColors } from "../../utils/constants";
 import './styles.css';
 
 const PokemonCard = (props) => {

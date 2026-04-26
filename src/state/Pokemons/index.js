@@ -49,11 +49,3 @@ export default pokemonSlice;
 export const pokemonsSelector = state => state.pokemons.home;
 export const pokemonDetailsSelector = state => state.pokemons.details;
 export const typesSelector = state => state.pokemons.types;
-// export const selectPokemonById = (id) => {
-//     return createSelector(
-//         pokemonsSelector,
-//         (pokemons) => {
-//             console.log({ pokemons, id })
-//         }
-//     )
-// }

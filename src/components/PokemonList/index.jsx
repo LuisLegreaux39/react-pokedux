@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { motion } from "framer-motion";
 
 import PokemonCard from './PokemonCard';
-import { pokemonsSelector } from "@/state/Pokemons"
+import { pokemonsSelector } from "../../state/Pokemons"
 import './styles.css';
 
 const PokemonList = (props) => {

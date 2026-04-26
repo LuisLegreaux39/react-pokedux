@@ -4,7 +4,7 @@ import {
 
 import { POKEMONS } from './actions'
 
-import { getAllPokemons, getSeveralIds } from "@/api/pokemons";
+import { getAllPokemons, getSeveralIds } from "../../../api/pokemons";
 
 export const getPokemons = createAsyncThunk(POKEMONS.GET_ALL, async (arg) => {
     const { data: { count, results, next, previous } } = await getAllPokemons();

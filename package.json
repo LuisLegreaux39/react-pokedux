@@ -21,8 +21,8 @@
     "husky": "^7.0.4",
     "pokeapi-js-wrapper": "^1.2.2",
     "prettier": "^2.5.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
     "react-use": "^17.3.2",
@@ -31,6 +31,9 @@
     "semantic-ui-react": "^2.0.4"
   },
   "devDependencies": {
+    "@types/fuzzy-search": "^2.1.5",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "@vitejs/plugin-react": "^1.0.7",
@@ -41,6 +44,7 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
     "gh-pages": "^3.2.3",
+    "typescript": "^6.0.3",
     "vite": "^2.8.0"
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu as SemanticMenu, Container, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import logo from '@/statics/images/logo_v4.svg';
+import logo from '../../statics/images/logo_v4.svg';
 
 
 const Menu = () => {

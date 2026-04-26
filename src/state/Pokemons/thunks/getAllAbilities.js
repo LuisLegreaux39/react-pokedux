@@ -4,7 +4,7 @@ import {
 
 import { ABILITIES } from './actions'
 
-import { getAllAbilities , getSeveralAbiliesIDs} from "@/api/pokemons";
+import { getAllAbilities , getSeveralAbiliesIDs} from "../../../api/pokemons";
 
 export const getAbilities = createAsyncThunk(ABILITIES.GET_ALL, async (arg) => {
     const { data: { results } } = await getAllAbilities();
