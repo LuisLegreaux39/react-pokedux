@@ -100,6 +100,6 @@ export class AxiosServiceClass {
     //         ...obj,
     //     }
     // }
-
+    }
 
 }

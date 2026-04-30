@@ -1,5 +1,6 @@
 import {
     Route,
+    redirect,
     Routes
 } from 'react-router-dom';
 

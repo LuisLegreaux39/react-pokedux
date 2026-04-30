@@ -11,12 +11,11 @@ import { typeColors } from "../../utils/constants";
 const TypesDetails = () => {
 
     const [visible, setVisibility] = useState(false);
-    const { list } = useSelector(state => typesSelector(state));
+    const { list  } = useSelector(typesSelector);
 
     useEffectOnce(()=>{
         dispatcher(getAllTypes())
     })
-
     return (
         <Container>
             <Grid>
@@ -25,7 +24,7 @@ const TypesDetails = () => {
                         {list.map(({ name }, _index) => (
                             <Label key={_index} style={{
                                 margin: "5px",
-                                backgroundColor: `#${typeColors[name]}`,
+                                backgroundColor: `#${typeColors[name as keyof typeof typeColors]}`,
                                 color: "white"
                             }}>{name}</Label>
                         ))}

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Grid, Loader, Container, Image, Transition } from 'semantic-ui-react';
 
 import { getPokemon } from "../../state/Pokemons/thunks/getPokemonById";
-import { pokemonDetailsSelector } from '../../state/Pokemons/index';
+import { detailsSelector } from '../../state/Pokemons';
 import BasictStats from "./BasictStats"
 import { dispatcher } from "../../state/store";
 
@@ -18,7 +18,7 @@ const Index = () => {
 
     const { id } = useParams();
 
-    const { pokemon, status } = useSelector(state => pokemonDetailsSelector(state))
+    const { pokemon, status } = useSelector(state => detailsSelector(state))
 
     useEffectOnce(() => {
         dispatcher(

@@ -39,7 +39,7 @@
     "jsx": "react",
     "verbatimModuleSyntax": false,
     "isolatedModules": true,
-    "moduleResolution": "node16",
+    "moduleResolution": "node",
     // "noUncheckedSideEffectImports": true,
     // "moduleDetection": "force",
     // "skipLibCheck": true,
