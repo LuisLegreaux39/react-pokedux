@@ -5,11 +5,11 @@ import { useEffectOnce } from "react-use";
 import FuzzySearch from 'fuzzy-search';
 
 import Searcher from '../../components/Searcher';
-import PokemonList from '../../components/PokemonList';
+import TypesDetails from './TypesDetails'
+import PokemonList from './PokemonList';
 import { dispatcher } from "../../state/store";
 import { homeSelector } from "../../state/Pokemons"
 import { getPokemons } from "../../state/Pokemons/thunks/getAllPokemons";
-import TypesDetails from './TypesDetails'
 import Loader from '../../components/Loader'
 
 
@@ -36,7 +36,7 @@ const Home = () => {
     <div className='Home'>
       <Searcher handleSearch={(search:string) => console.log(search)} />
       <TypesDetails />
-      <PokemonList pokemonList={()=>{}} />
+      <PokemonList  />
     </div>
   );
 }
