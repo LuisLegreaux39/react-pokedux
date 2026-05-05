@@ -7,32 +7,41 @@ import { dispatcher } from "../../state/store";
 import { getAllTypes } from "../../state/Pokemons/thunks/getAllTypes";
 import { typesSelector } from '../../state/Pokemons/index';
 import { typeColors } from "../../utils/constants";
+import RandomPokeImg from '../../components/RamdomPokeImg';
+
+
 
 const TypesDetails = () => {
 
     const [visible, setVisibility] = useState(false);
-    const { list  } = useSelector(typesSelector);
+    const { list } = useSelector(typesSelector);
 
-    useEffectOnce(()=>{
+    useEffectOnce(() => {
         dispatcher(getAllTypes())
     })
     return (
-        <Container>
-            <Grid>
-                <Grid.Row>
-                    <Transition.Group as={"list"} visible={visible} animation='scale' duration={900}>
-                        {list.map(({ name }, _index) => (
-                            <Label key={_index} style={{
-                                margin: "5px",
-                                backgroundColor: `#${typeColors[name as keyof typeof typeColors]}`,
-                                color: "white"
-                            }}>{name}</Label>
-                        ))}
-                    </Transition.Group>
+        <Grid centered>
+            <Grid.Row>
+                <RandomPokeImg />
+                <RandomPokeImg />
+                <RandomPokeImg />
+                <RandomPokeImg />
+                <Transition.Group as={"list"} visible={visible} animation='scale' duration={900}>
+                    {list.map(({ name }, _index) => (
+                        <Label key={_index} style={{
+                            margin: "5px",
+                            backgroundColor: `#${typeColors[name as keyof typeof typeColors]}`,
+                            color: "white"
+                        }}>{name}</Label>
+                    ))}
+                </Transition.Group>
+                <RandomPokeImg />
+                <RandomPokeImg />
+                <RandomPokeImg />
+                <RandomPokeImg />
+            </Grid.Row>
 
-                </Grid.Row>
-            </Grid>
-        </Container>
+        </Grid>
     )
 }
 

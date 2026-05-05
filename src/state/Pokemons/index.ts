@@ -8,7 +8,8 @@ import { getAbilitiesExtraReducer } from './thunks/getAllAbilities';
 import { getAllTypesExtraReducer } from './thunks/getAllTypes';
 import { getMovesExtraReducers } from './thunks/getMoves';
 
-import { RootState } from '../store'
+import { RootState } from '../store';
+import { Pokemon } from '../../types/pokemon'
 
 
 type Status = 'idle' | "pending" | "fulfilled" | "rejected";
@@ -20,7 +21,7 @@ type SubSlice<T> = {
 
 interface PokemonSlice {
     home: {
-        list: any[],
+        list: Pokemon[],
         pokemonCount: number,
         status: Status,
         next: string | null,

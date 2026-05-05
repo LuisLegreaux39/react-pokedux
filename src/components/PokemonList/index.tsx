@@ -29,7 +29,6 @@ const PokemonList: FC<PropsWithChildren<{ list: [] }>> = ({ list }) => {
 
   const [pagination ,setPaginationSettings] = useState({})
 
-  return null
   return <CenterMotionDiv style={{ textAlign:"center"}}>
     <Loader />
   </CenterMotionDiv>

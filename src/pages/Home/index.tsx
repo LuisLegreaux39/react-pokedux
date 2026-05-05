@@ -11,6 +11,7 @@ import { dispatcher } from "../../state/store";
 import { homeSelector } from "../../state/Pokemons"
 import { getPokemons } from "../../state/Pokemons/thunks/getAllPokemons";
 import Loader from '../../components/Loader'
+import { Container } from 'semantic-ui-react';
 
 
 const Home = () => {
@@ -32,13 +33,11 @@ const Home = () => {
 
   // useEffectOnce(() => dispatcher(getPokemons()))
   
-  return (
-    <div className='Home'>
+  return <div className='home'>
       <Searcher handleSearch={(search:string) => console.log(search)} />
       <TypesDetails />
       <PokemonList  />
     </div>
-  );
 }
 
 
