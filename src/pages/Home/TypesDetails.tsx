@@ -11,6 +11,7 @@ import RandomPokeImg from '../../components/RamdomPokeImg';
 
 
 
+
 const TypesDetails = () => {
 
     const [visible, setVisibility] = useState(false);
@@ -25,7 +26,6 @@ const TypesDetails = () => {
                 <RandomPokeImg />
                 <RandomPokeImg />
                 <RandomPokeImg />
-                <RandomPokeImg />
                 <Transition.Group as={"list"} visible={visible} animation='scale' duration={900}>
                     {list.map(({ name }, _index) => (
                         <Label key={_index} style={{
@@ -35,7 +35,6 @@ const TypesDetails = () => {
                         }}>{name}</Label>
                     ))}
                 </Transition.Group>
-                <RandomPokeImg />
                 <RandomPokeImg />
                 <RandomPokeImg />
                 <RandomPokeImg />

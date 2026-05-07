@@ -8,9 +8,9 @@ const Layout:FC<PropsWithChildren> = ({ children }) => {
       <Menu />
       <div className='Layout-content' style={{ display: "flex"}}>
         {children}
-        <div style={{ backgroundColor:"black" }}>
+        {/* <div style={{ backgroundColor:"black" }}>
           here goes the vertical
-        </div>
+        </div> */}
       </div>
     </div>
   );

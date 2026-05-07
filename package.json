@@ -29,7 +29,8 @@
     "react-use": "^17.3.2",
     "redux": "^4.1.2",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.4"
+    "semantic-ui-react": "^2.0.4",
+    "styled-components": "^6.4.1"
   },
   "devDependencies": {
     "@types/fuzzy-search": "^2.1.5",

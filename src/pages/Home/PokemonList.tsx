@@ -16,11 +16,12 @@ const PokemonList = () => {
         dispatcher(getPokemons())
     })
     if (status === 'pending' || status === 'idle') return <Loader />
-    return <Grid>
-            <GridRow columns={12} centered>
-                {list.map((props) => <GridColumn computer={3} key={`${id}-${props.id}`}><PokemonCard {...props} /></GridColumn>)}
-            </GridRow>
-        </Grid>
+    return <Grid centered relaxed>
+        {list.map((props) => <GridColumn  largeScreen={3} widescreen={3}  key={`${id}-${props.id}`}  >
+                <PokemonCard {...props} />
+            </GridColumn>
+            )}
+    </Grid>
 }
 
 export default PokemonList
