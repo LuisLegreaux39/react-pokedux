@@ -7,6 +7,7 @@ import Loader from "../Loader"
 import styled from "styled-components"
 
 import { typeColors } from "../../utils/constants";
+import Drawer from '../Drawer'
 import { useWindowSize } from 'react-use';
 
 import Bg_normal from '../../statics/images/greypokeball-normal.png';
@@ -145,7 +146,7 @@ const PokemonCard: FC<Pokemon> = ({ name, cries, height, weight, sprites, types 
                     </List>
                 </GridColumn> : null
             }
-      
+        <Drawer />
         </StyledGridWrapper>
 
     );

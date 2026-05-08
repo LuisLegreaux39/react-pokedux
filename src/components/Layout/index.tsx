@@ -1,4 +1,4 @@
-import './styles.css';
+import './styles.module.css';
 import React, { FC, PropsWithChildren } from 'react';
 import Menu from '../Menu';
 
