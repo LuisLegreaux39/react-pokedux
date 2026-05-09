@@ -28,7 +28,7 @@ interface PokemonSlice {
         previous: string | null
     },
     details: {
-        pokemon: any[],
+        pokemon: any,
         status: Status,
     },
     abilities: SubSlice<any>,
@@ -49,7 +49,7 @@ const initialState: PokemonSlice = {
         status: 'idle'
     },
     details: {
-        pokemon: [],
+        pokemon: null,
         status: "idle"
     },
     moves: {
@@ -80,5 +80,5 @@ export const pokemonSlice = createSlice({
 
 export const selectIsGeneralLoading = (state: RootState) => state.pokeapi.home.status
 export const homeSelector = (state: RootState) => state.pokeapi.home;
-export const detailsSelector = (state: RootState) => state.pokeapi.details;
+export const pokemonDetailsSelector = (state: RootState) => state.pokeapi.details;
 export const typesSelector = (state: RootState) => state.pokeapi.types;

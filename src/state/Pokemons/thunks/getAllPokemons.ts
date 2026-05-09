@@ -21,7 +21,6 @@ export const getPokemons = createAsyncThunk(POKEMONS.GET_ALL, async (arg) => {
                     ...pokemonDetails,
                     species
                 }
-                
             })
         )
         return {

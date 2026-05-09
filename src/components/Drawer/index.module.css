@@ -85,14 +85,14 @@
 .Popup {
   --bleed: 3rem;
   box-sizing: border-box;
-  width: calc(20rem + var(--bleed));
+  width: calc(50rem + var(--bleed));
   max-width: calc(100vw - 3rem + var(--bleed));
   height: 100%;
   padding: 1.5rem;
   padding-right: calc(1.5rem + var(--bleed));
   margin-right: calc(-1 * var(--bleed));
   outline: 1px solid var(--color-gray-200);
-  background-color: var(--color-gray-50);
+  background-color: var(--color-gray-950);
   color: var(--color-gray-900);
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -136,7 +136,7 @@
 
 .Content {
   width: 100%;
-  max-width: 32rem;
+  /* max-width: 32rem; */
   margin: 0 auto;
 }
 

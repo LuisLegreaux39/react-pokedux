@@ -7,7 +7,7 @@ import Loader from "../Loader"
 import styled from "styled-components"
 
 import { typeColors } from "../../utils/constants";
-import Drawer from '../Drawer'
+import DetailsDrawer from '../Drawer'
 import { useWindowSize } from 'react-use';
 
 import Bg_normal from '../../statics/images/greypokeball-normal.png';
@@ -60,8 +60,7 @@ const StyledH5 = styled.h5`
 
 // }
 
-const PokemonCard: FC<Pokemon> = ({ name, cries, height, weight, sprites, types }) => {
-
+const PokemonCard: FC<Pokemon> = ({ name, cries, height, weight, sprites, types } ) => {
     const [audio] = useState(new Audio(cries.legacy));
     const [playing, setPlaying] = useState(false);
     const { width } = useWindowSize();
@@ -111,43 +110,42 @@ const PokemonCard: FC<Pokemon> = ({ name, cries, height, weight, sprites, types 
     }, []);
 
     return (
+        <DetailsDrawer
+            renderTrigger={({ open }) => {
+                return <StyledGridWrapper
+                    verticalAlign='middle'
+                    centered
+                    $color={typeColors[types[0].type.name as keyof typeof typeColors]}
+                    $bgImage={currentBg}
+                    onClick={open}>
 
-        <StyledGridWrapper
-            verticalAlign='middle'
-            centered
-            $color={typeColors[types[0].type.name as keyof typeof typeColors]}
-            $bgImage={currentBg}>
-            {/* {
-                !isMobile ? null : <GridRow centered>
-                    <Label horizontal  > {name} </Label>
-                </GridRow>
-            } */}
+                    <GridColumn mobile={16} largeScreen={8} widescreen={8} floated='left'>
+                        <Label circular ribbon size='medium'>
+                            {name && name[0].toUpperCase() +  name.substring(1,name.length)}
+                        </Label>
+                        <Image
+                            size="medium"
+                            src={sprites.other['official-artwork'].front_default}
+                        />
+                    </GridColumn>
+                    {
+                        !isMobile ? <GridColumn largeScreen={6} widescreen={6} floated='left'>
+                            <List >
+                                <ListItem><strong>Height:</strong>{height}</ListItem>
+                                <ListItem><strong>Weight:</strong>{weight}</ListItem>
+                                <ListItem>
+                                    <Label horizontal onClick={toggle}>
+                                        {!playing ? <Icon name='play' /> : <Loader />}
+                                    </Label>
+                                </ListItem>
+                            </List>
+                        </GridColumn> : null
+                    }
 
-            <GridColumn mobile={16} largeScreen={8} widescreen={8} floated='left'>
-                <Image
-                    size="medium"
-                    src={sprites.other['official-artwork'].front_default}
-                />
-            </GridColumn>
-            {
-                !isMobile ? <GridColumn largeScreen={6} widescreen={6} floated='left'>
-                    <List >
-                        <ListItem>
-                            {name && <StyledH5>{`${name[0].toUpperCase()}${name.substring(1, name.length)}`}</StyledH5>}
-                        </ListItem>
-                        <Divider fitted />
-                        <ListItem><strong>Height:</strong>{height}</ListItem>
-                        <ListItem><strong>Weight:</strong>{weight}</ListItem>
-                        <ListItem>
-                            <Label horizontal onClick={toggle}>
-                                {!playing ? <Icon name='play' /> : <Loader />}
-                            </Label>
-                        </ListItem>
-                    </List>
-                </GridColumn> : null
-            }
-        <Drawer />
-        </StyledGridWrapper>
+                </StyledGridWrapper>
+            }}
+        />
+
 
     );
 };

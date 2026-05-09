@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Grid, Loader, Container, Image, Transition } from 'semantic-ui-react';
 
 import { getPokemon } from "../../state/Pokemons/thunks/getPokemonById";
-import { detailsSelector } from '../../state/Pokemons';
+// import { detailsSelector } from '../../state/Pokemons';
 import BasictStats from "./BasictStats"
 import { dispatcher } from "../../state/store";
 
@@ -18,29 +18,29 @@ const Index = () => {
 
     const { id } = useParams();
 
-    const { pokemon, status } = useSelector(state => detailsSelector(state))
+    // const { pokemon, status } = useSelector(state => detailsSelector(state))
 
-    useEffectOnce(() => {
-        dispatcher(
-            getPokemon(
-                id
-            )
-        )
-        setTimeout(() => {
-            setVisibility(true)
-        }, 200)
-    })
+    // useEffectOnce(() => {
+    //     dispatcher(
+    //         getPokemon(
+    //             id
+    //         )
+    //     )
+    //     setTimeout(() => {
+    //         setVisibility(true)
+    //     }, 200)
+    // })
 
-    if (!pokemon) return null;
+    // if (!pokemon) return null;
 
-    if (status === 'pending') return <Loader active >Loading</Loader>;
+    // if (status === 'pending') return <Loader active >Loading</Loader>;
 
 
     return (
         <Container textAlign="center">
             <br />
             <Grid padded doubling>
-                <Row columns={2}>
+                {/* <Row columns={2}>
                     <Column >
                         <Transition visible={visible} animation='scale' duration={500} >
                             <Image
@@ -77,8 +77,8 @@ const Index = () => {
                             {move.name}
                         </Column>
                     ))}
-                </Row>
-            </Grid>
+                </Row>*/}
+            </Grid> 
         </Container>
     )
 }

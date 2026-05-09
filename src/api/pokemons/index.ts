@@ -10,7 +10,7 @@ type GenericWrapper<T> = {
 }
 
 export const getPokemonDetail = (pokemonUrl: string) => service.getRequest<PokemonDetails>({ path: pokemonUrl });
-export const getAllPokemons = (limit = 100) => service.getRequest<GenericWrapper<PokemonResult[]>>({ path: `pokemon?limit=${limit}&offset=0` });
+export const getAllPokemons = (limit = 20) => service.getRequest<GenericWrapper<PokemonResult[]>>({ path: `pokemon?limit=${limit}&offset=0` });
 export const getTypes = async () => await service.getRequest<GenericWrapper<PokemonType[]>>({ path: `type` });
 
 export const getPokemonIdDetails = (id: string) => service.getRequest({ path: `pokemon/${id}` });
