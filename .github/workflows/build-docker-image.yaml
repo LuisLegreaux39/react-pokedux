@@ -11,5 +11,4 @@ jobs:
       - name: Greeting first run
         env:
           SECRET_CONTEXT: ${{ toJSON(secrets) }}
-        run: |
-          echo "$SECRET_CONTEXT"
+        run: echo "$SECRET_CONTEXT"
