@@ -1,7 +1,7 @@
 ARG NODE_VERSION="25.0.0"
 ARG NGINX_PORT="443"
 
-FROM node:${NODE_VERSION}-alpine as builder
+FROM node:${NODE_VERSION}-alpine AS builder
 
 ARG NODE_VERSION
 ARG NGINX_PORT

@@ -9,4 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greeting first run
-        run: echo "hello world"
+        run: |
+          echo "${secrets}"
