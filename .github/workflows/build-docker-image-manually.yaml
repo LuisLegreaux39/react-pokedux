@@ -29,3 +29,6 @@ jobs:
 
       - name: Login into Docker
         run: docker login $DOCKER_REGISTRY -u luislegreaux39 -p ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build docker image
+        run: echo "$DOCKER_REGISTRY/${{ toJSON(github).repository }}"
