@@ -25,6 +25,7 @@ jobs:
               "features": {
                 "containerd-snapshotter": true
               }
+            }
 
       - name: Login into Docker
         run: docker login $DOCKER_REGISTRY -u luislegreaux39 -p ${{ secrets.GITHUB_TOKEN }}
