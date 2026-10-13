@@ -6,7 +6,6 @@ on:
       - "manual-*"
 env:
   DOCKER_REGISTRY: ghcr.io
-  DOCKER_NAMESPACE: ${{ github.repository }}
 jobs:
   docker-image-build-manually:
     name: docker-image-build-manually
@@ -32,7 +31,11 @@ jobs:
         run: docker login $DOCKER_REGISTRY -u luislegreaux39 -p ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build docker image
+        env:
+          DOCKER_NAMESPACE: ${{ github.repository }}
         run: docker build -t $DOCKER_REGISTRY/$DOCKER_NAMESPACE:latest .
 
       - name: Pushing to Docker ==> $DOCKER_REGISTRY
+        env:
+          DOCKER_NAMESPACE: ${{ github.repository }}
         uses: docker push $DOCKER_REGISTRY/$DOCKER_NAMESPACE:latest .
