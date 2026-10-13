@@ -1,0 +1,30 @@
+name: Building docker image yaml manually
+run-name: building docker image manually
+on:
+  push:
+    branches:
+      - "manual-*"
+env:
+  DOCKER_REGISTRY: ghcr.io
+jobs:
+  docker-image-build-manually:
+    name: docker-image-build-manually
+    runs-on: ubuntu-latest
+    steps:
+      - name: Downloading changes
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Docker
+        uses: docker/setup-docker-action@v5
+        with:
+          daemon-config: |
+            {
+              "debug": true,
+              "features": {
+                "containerd-snapshotter": true
+              }
+
+      - name: Login into Docker
+        run: docker login $DOCKER_REGISTRY -u luislegreaux39 -p ${{ secrets.GITHUB_TOKEN }}
