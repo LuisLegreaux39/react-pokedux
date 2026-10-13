@@ -17,7 +17,7 @@ const PokemonList = () => {
     })
     if (status === 'pending' || status === 'idle') return <Loader />
     return <Grid centered relaxed>
-        {list.map((props) => <GridColumn  largeScreen={3} widescreen={3}  key={`${id}-${props.id}`}  >
+        {list.map((props) => <GridColumn  largeScreen={3}  key={`${id}-${props.id}`}  >
                 <PokemonCard {...props} />
             </GridColumn>
             )}

@@ -65,6 +65,8 @@ const PokemonCard: FC<Pokemon> = ({ name, cries, height, weight, sprites, types 
     const [playing, setPlaying] = useState(false);
     const { width } = useWindowSize();
 
+    
+
     const toggle = () => setPlaying(!playing);
 
     const currentBg = useMemo(
@@ -128,7 +130,7 @@ const PokemonCard: FC<Pokemon> = ({ name, cries, height, weight, sprites, types 
                             src={sprites.other['official-artwork'].front_default}
                         />
                     </GridColumn>
-                    {
+                    {/* {
                         !isMobile ? <GridColumn largeScreen={6} widescreen={6} floated='left'>
                             <List >
                                 <ListItem><strong>Height:</strong>{height}</ListItem>
@@ -140,7 +142,7 @@ const PokemonCard: FC<Pokemon> = ({ name, cries, height, weight, sprites, types 
                                 </ListItem>
                             </List>
                         </GridColumn> : null
-                    }
+                    } */}
 
                 </StyledGridWrapper>
             }}

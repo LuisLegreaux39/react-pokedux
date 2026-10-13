@@ -23,6 +23,7 @@ export const getPokemons = createAsyncThunk(POKEMONS.GET_ALL, async (arg) => {
                 }
             })
         )
+        console.log(list)
         return {
             count,
             list,
