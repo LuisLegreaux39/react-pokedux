@@ -6,7 +6,7 @@ on:
       - "manual-*"
 env:
   DOCKER_REGISTRY: ghcr.io
-  DOCKER_NAMESPACE: ${{ github.repository }}
+  DOCKER_NAMESPACE: ${{ github.repository.lowercase }}
 jobs:
   docker-image-build-manually:
     name: docker-image-build-manually
