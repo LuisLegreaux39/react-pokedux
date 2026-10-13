@@ -26,5 +26,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
+          context: .
           push: true
           tags: user/app:latest
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.DOCKER_PASSWORD }}
