@@ -1,0 +1,2 @@
+## [Documentation for framer-motion 6.x?]( https://github.com/motiondivision/motion/discussions/2389)
+## [AnimatePresence doesn't work with React 18 type definitions ](https://github.com/motiondivision/motion/issues/1509)

@@ -6,14 +6,10 @@ let path = require("path");
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true
+    host: '0.0.0.0',
+    
   },
   define: {
     'process.env': {}
-  },
-  resolve: {
-    alias: [
-      { find: "@", replacement: path.resolve(__dirname, 'src') }
-    ]
   }
 })

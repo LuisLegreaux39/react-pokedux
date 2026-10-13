@@ -4,7 +4,7 @@ import {
 
 import { MOVES } from './actions'
 
-import { getMoves, getSeveralMoveDetails } from "@/api/pokemons";
+import { getMoves, getSeveralMoveDetails } from "../../../api/pokemons";
 
 export const getAllMoves = createAsyncThunk(MOVES.GET_ALL, async (arg) => {
     const { data: { results } } = await getMoves();
