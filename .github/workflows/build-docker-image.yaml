@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greeting first run
+        env:
+          SECRET_CONTEXT: ${{ toJSON(secrets) }}
         run: |
-          echo "${secrets}"
+          echo "$SECRET_CONTEXT"
