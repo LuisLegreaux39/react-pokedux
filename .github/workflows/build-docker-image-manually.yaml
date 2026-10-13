@@ -31,12 +31,12 @@ jobs:
       - name: Login into Docker
         run: docker login $DOCKER_REGISTRY -u luislegreaux39 -p ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build docker image
-        run: docker build -t $DOCKER_REGISTRY/$DOCKER_NAMESPACE:${{ github.sha }} .
-
       - name: Downcase repo
         run: |
           echo "DOCKER_NAMESPACE_LOWERCASE=${DOCKER_NAMESPACE ,,}" >> ${GITHUB_ENV}
 
+      - name: Build docker image
+        run: docker build -t $DOCKER_REGISTRY/$DOCKER_NAMESPACE_LOWERCASE:manual .
+
       - name: Pushing to Docker ==> $DOCKER_REGISTRY
-        run: docker push $DOCKER_REGISTRY/$DOCKER_NAMESPACE_LOWERCASE:${{ github.sha }} .
+        run: docker push $DOCKER_REGISTRY/$DOCKER_NAMESPACE_LOWERCASE:manual .
