@@ -1,6 +1,7 @@
 name: Build react pokedux docker image
 run-name: react-pokedux-fe-cr-image-generation
-
+env:
+  DOCKER_REGISTRY: ghcr.io
 on:
   push:
     branches: [main]
