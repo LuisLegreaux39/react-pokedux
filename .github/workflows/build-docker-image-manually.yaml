@@ -32,5 +32,5 @@ jobs:
 
       - name: Build docker image
         env:
-          DOCKER_NAMESPACE: ${{ toJSON(github.repository) }}
-        run: echo "$DOCKER_REGISTRY/$DOCKER_NAMESPACE:latest"
+          DOCKER_NAMESPACE: ${{ github.repository }}
+        run: docker build -t $DOCKER_REGISTRY/$DOCKER_NAMESPACE:latest .
