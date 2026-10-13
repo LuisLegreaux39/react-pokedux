@@ -31,4 +31,6 @@ jobs:
         run: docker login $DOCKER_REGISTRY -u luislegreaux39 -p ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build docker image
-        run: echo "$DOCKER_REGISTRY/${{ toJSON(github).repository }}"
+        env:
+          DOCKER_NAMESPACE: ${{ toJSON(github.repository) }}
+        run: echo "$DOCKER_REGISTRY/$DOCKER_NAMESPACE:latest"
