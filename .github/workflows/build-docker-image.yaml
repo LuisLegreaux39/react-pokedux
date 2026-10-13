@@ -1,0 +1,12 @@
+name: Build react pokedux docker image
+run-name: react-pokedux-fe-cr-image-generation
+on:
+  push:
+    branches: [main]
+jobs:
+  docker-image-build:
+    name: docker-image-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greeting first run
+        run: echo "hello world"
